@@ -11,6 +11,7 @@ public class Pessoa {
 	protected String localizacao;
 
 	public Pessoa() {
+		System.out.println("MÃ©todo construtor da super classe pessoa.");
 	}
 
 	public Pessoa(int cpf, String nome, String email, String senha, int telefone, String localizacao) {
@@ -62,16 +63,16 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 
-	public String getLocalização() {
+	public String getLocalizacao() {
 		return localizacao;
 	}
 
-	public void setLocalização(String localização) {
-		this.localizacao = localização;
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
 	}
 
 	public void solicitarCorrida() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do seu cadastro");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do seu cadastro");
 		int cdgInt = Integer.parseInt(cdg);
 		Corrida c1 = new Corrida(Main.registroPessoa.get(cdgInt), null);
 		Main.registroCorrida.add(c1);

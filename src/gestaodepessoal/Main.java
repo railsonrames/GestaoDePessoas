@@ -5,18 +5,18 @@ import javax.swing.JOptionPane;
 
 public class Main {
 
-	static ArrayList<Pessoa> registroPessoa = new ArrayList();
-	static ArrayList<Motorista> registroMotorista = new ArrayList();
-	static ArrayList<Carro> registroCarro = new ArrayList();
-	static ArrayList<Corrida> registroCorrida = new ArrayList();
+	static ArrayList<Pessoa> registroPessoa = new ArrayList<Pessoa>();
+	static ArrayList<Motorista> registroMotorista = new ArrayList<Motorista>();
+	static ArrayList<Carro> registroCarro = new ArrayList<Carro>();
+	static ArrayList<Corrida> registroCorrida = new ArrayList<Corrida>();
 
 	public static void main(String[] args) {
 		Object[] opcoes = {"Passageiro","Motorista"};
 		Object resposta;
-		resposta = JOptionPane.showInputDialog(null,"Quem é você?","Identificação",
+		resposta = JOptionPane.showInputDialog(null,"Quem e voce?","Identificacao",
 		JOptionPane.PLAIN_MESSAGE,null,opcoes,null);
 		if (resposta == "Passageiro") {
-			JOptionPane.showMessageDialog(null, "Olá passageiro!\n"
+			JOptionPane.showMessageDialog(null, "Ola passageiro!\n"
 			+ "Vamos cadastra-lo ao sistema para com que voce possa solicitar seu motorista!");
 			cp();
 			while (true){
@@ -42,7 +42,7 @@ public class Main {
 			}
 		}
 		if (resposta == "Motorista") {
-			JOptionPane.showMessageDialog(null, "Olá motorista!\n"
+			JOptionPane.showMessageDialog(null, "Ola motorista!\n"
 			+ "Vamos cadastra-lo ao sistema para com que voce possa realizar suas corridas!");
 			cm();
 			while (true){
@@ -55,7 +55,7 @@ public class Main {
 				+ "5 - Cadastrar novo carro\n"
 				+ "6 - Alterar cor de carro\n"
 				+ "7 - Excluir carro\n"
-				+ "8 - Consultar cadastro de carro"
+				+ "8 - Consultar cadastro de carro\n"
 				+ "0 - Sair");
 				int respostaMenu = Integer.parseInt(menu);
 				switch (respostaMenu) {
@@ -80,16 +80,16 @@ public class Main {
 		String nome = JOptionPane.showInputDialog("Qual seu nome?");
 		String cpf = JOptionPane.showInputDialog("Qual seu CPF?");
 		int cpfInt = Integer.parseInt(cpf);
-		String telefone = JOptionPane.showInputDialog("Qual seu número para contato?");
+		String telefone = JOptionPane.showInputDialog("Qual seu nï¿½mero para contato?");
 		int telefoneInt = Integer.parseInt(telefone);
 		String email = JOptionPane.showInputDialog("Qual seu email?");
 		String senha = JOptionPane.showInputDialog("Defina uma senha");
 		Pessoa p1 = new Pessoa(cpfInt, nome, email, senha, telefoneInt, null);
 		registroPessoa.add(p1);
-		JOptionPane.showMessageDialog(null, "O código do seu cadastro é: " + registroPessoa.indexOf(p1));
+		JOptionPane.showMessageDialog(null, "O cï¿½digo do seu cadastro ï¿½: " + registroPessoa.indexOf(p1));
 	}
 	public static void sp() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja consultar");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja consultar");
 		int cdgInt = Integer.parseInt(cdg);
 	       if (registroPessoa.size()-1 >=cdgInt && cdgInt >=0){
 	    	   JOptionPane.showMessageDialog(null,"Nome: " + registroPessoa.get(cdgInt).getNome()+ "\n"
@@ -102,7 +102,7 @@ public class Main {
            }
 	}
 	public static void ep() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
 		int cdgInt = Integer.parseInt(cdg);
         if (registroPessoa.size()-1 >=cdgInt && cdgInt >=0){
             registroPessoa.remove(cdgInt);
@@ -113,7 +113,7 @@ public class Main {
             }
 	}
 	public static void ap() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja alterar");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja alterar");
 		int cdgInt = Integer.parseInt(cdg);
 		if (registroPessoa.size()-1 >=cdgInt && cdgInt >=0){
 			String nome = JOptionPane.showInputDialog("Novo nome: ");
@@ -133,19 +133,19 @@ public class Main {
 		String nome = JOptionPane.showInputDialog("Qual seu nome?");
 		String cpf = JOptionPane.showInputDialog("Qual seu CPF?");
 		int cpfInt = Integer.parseInt(cpf);
-		String telefone = JOptionPane.showInputDialog("Qual seu número para contato?");
+		String telefone = JOptionPane.showInputDialog("Qual seu nï¿½mero para contato?");
 		int telefoneInt = Integer.parseInt(telefone);
 		String email = JOptionPane.showInputDialog("Qual seu email?");
 		String senha = JOptionPane.showInputDialog("Defina uma senha");
 		String cnh = JOptionPane.showInputDialog("Qual a categoria da sua CNH?");
-		String numeroCnh = JOptionPane.showInputDialog("Qual o número de sua CNH?");
+		String numeroCnh = JOptionPane.showInputDialog("Qual o numero de sua CNH?");
 		int cnhInt = Integer.parseInt(numeroCnh);
 		Motorista m1 = new Motorista (cpfInt, nome, email, senha, telefoneInt, null, cnh, cnhInt, null);
 		registroMotorista.add(m1);
-		JOptionPane.showMessageDialog(null, "O código do seu cadastro é: " + registroMotorista.indexOf(m1));
+		JOptionPane.showMessageDialog(null, "O codigo do seu cadastro e: " + registroMotorista.indexOf(m1));
 	}
 	public static void am() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja alterar");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja alterar");
 		int cdgInt = Integer.parseInt(cdg);
 		if (registroMotorista.size()-1 >=cdgInt && cdgInt >=0){
 			String nome = JOptionPane.showInputDialog("Novo nome: ");
@@ -162,7 +162,7 @@ public class Main {
         }
 	}
 	public static void sm() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja consultar");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja consultar");
 		int cdgInt = Integer.parseInt(cdg);
 	       if (registroMotorista.size()-1 >=cdgInt && cdgInt >=0){
 	    	   JOptionPane.showMessageDialog(null,"Nome: " + registroMotorista.get(cdgInt).getNome()+ "\n"
@@ -177,7 +177,7 @@ public class Main {
            }
 	}
 	public static void em() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do cadastro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do cadastro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
 		int cdgInt = Integer.parseInt(cdg);
         if (registroMotorista.size()-1 >=cdgInt && cdgInt >=0){
             registroMotorista.remove(cdgInt);
@@ -194,10 +194,10 @@ public class Main {
 		String marca = JOptionPane.showInputDialog("Qual a marca");
 		Carro c1 = new Carro(placa, cor, modelo, marca);
 		registroCarro.add(c1);
-		JOptionPane.showMessageDialog(null, "O código do seu cadastro é: " + registroCarro.indexOf(c1));
+		JOptionPane.showMessageDialog(null, "O cï¿½digo do seu cadastro ï¿½: " + registroCarro.indexOf(c1));
 	}
 	public static void ac() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do carro que deseja alterar a cor");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do carro que deseja alterar a cor");
 		int cdgInt = Integer.parseInt(cdg);
 		if (registroCarro.size()-1 >=cdgInt && cdgInt >=0){
 			String cor = JOptionPane.showInputDialog("Nova cor: ");
@@ -208,7 +208,7 @@ public class Main {
         }
 	}
 	public static void ec() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do carro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do carro que deseja apagar", "Apagar", JOptionPane.PLAIN_MESSAGE);
 		int cdgInt = Integer.parseInt(cdg);
         if (registroCarro.size()-1 >=cdgInt && cdgInt >=0){
             registroCarro.remove(cdgInt);
@@ -219,7 +219,7 @@ public class Main {
             }
 	}
 	public static void sc() {
-		String cdg = JOptionPane.showInputDialog(null, "Insira o código do carro que deseja consultar");
+		String cdg = JOptionPane.showInputDialog(null, "Insira o cï¿½digo do carro que deseja consultar");
 		int cdgInt = Integer.parseInt(cdg);
 	       if (registroCarro.size()-1 >=cdgInt && cdgInt >=0){
 	    	   JOptionPane.showMessageDialog(null,"Placa: " + registroCarro.get(cdgInt).getPlaca()+ "\n"
