@@ -1,0 +1,1 @@
+Fala Marcelo, o que eu disse sobre os acentos "tupiniquins", infelizmente quebra tudo, mas não tem o que ser feito, vamos continuar usando, mas veja o que aconteceu na minha máquina quando puxei o projeto via GitHub.
